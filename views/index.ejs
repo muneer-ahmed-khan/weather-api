@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Weather App</title>
+</head>
+
+<body>
+  <h1>My Weather App</h1>
+  <form action="/weather" method="GET">
+    <label for="city">Enter City:</label>
+    <input type="text" id="city" name="city" required />
+    <button type="submit">Get Weather</button>
+  </form>
+  <div id="weather-info"><% if(weather){ %>
+    <h1>Location: <%= weather.location %></h1>
+    <h3>Weather: <%= weather.weather %></h3>
+    <h3>Description: <%= weather.description %></h3>
+    <h3>Temperature: <%= weather.temperature %></h3>
+    <h3>Humidity: <%= weather.humidity %></h3>
+    <h3>Wind Speed: <%= weather.windSpeed %></h3>
+  </div>
+  <form action="/" method="GET">
+    <button type="submit">Get Weather</button>
+  </form>
+  <% } %>
+</body>
+
+</html>
